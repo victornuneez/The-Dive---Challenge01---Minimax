@@ -6,31 +6,24 @@ El juego se desarrolla en un tablero bidimensional (matriz) con obstáculos. El 
 
 Tecnologías Utilizadas
 Lenguaje: Python 3
-
 Librerías: os (para manipulación de la terminal/consola).
-
 Conceptos clave: Matrices, Tuplas, Diccionarios y Algoritmos de IA.
 
 Lógica y Algoritmos (Paso a Paso)
 Este proyecto destaca por el uso de dos estrategias para el enemigo (el gato):
-
 Estrategia Greedy (Codiciosa): El gato calcula la distancia Manhattan hacia el ratón y elige el movimiento que más reduce esa distancia en el siguiente turno.
-
 Algoritmo Minimax: * Es el corazón del proyecto. El gato "imagina" el futuro hasta 4 turnos adelante.
-
 Simula tanto sus mejores movimientos como los posibles movimientos de escape del jugador.
-
 Evaluación: Asigna puntajes (100 si atrapa al ratón, -100 si el ratón escapa) para decidir la ruta óptima.
 
 Sistema de Renderizado: El tablero se limpia y se redibuja en cada turno para crear una sensación de animación en la consola, utilizando una lógica de "copia y reemplazo" para no dañar el mapa original.
 
 Cómo Ejecutarlo
 Asegúrate de tener Python instalado.
-
 Guarda el código en un archivo llamado gato_raton.py.
 
 Ejecuta en tu terminal:
 
 Powershell
-python Laberinto.py
+python gato_raton.py
 Usa las teclas W, A, S, D para mover al ratón.
