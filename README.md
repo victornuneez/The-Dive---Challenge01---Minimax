@@ -1,41 +1,61 @@
-🐭🐱 Proyecto: Gato y Ratón - IA con Minimax
+# 🐭😺 Proyecto: Gato y Ratón — IA con Minimax
 
-Este proyecto es un simulador de persecución basado en consola donde un jugador controla a un ratón que intenta escapar hacia una salida, mientras que la computadora controla a un gato con inteligencia artificial.
+Este proyecto es un **simulador de persecución** basado en consola. El jugador controla a un ratón que intenta escapar hacia una salida, mientras que la computadora controla a un gato potenciado por inteligencia artificial.
 
-📖 Descripción
+## 📖 Descripción del Juego
 
-El juego se desarrolla en un tablero bidimensional (matriz) con obstáculos. El objetivo del ratón es llegar al emoji de la puerta (🚪) antes de ser capturado por el gato. El gato no solo te sigue, sino que utiliza algoritmos de búsqueda para anticipar tus movimientos.
+El juego se desarrolla en un tablero bidimensional (matriz) con obstáculos. 
 
-🛠️ Tecnologías Utilizadas
+* **Objetivo del Ratón:** Llegar a la salida (**🚪**) antes de ser capturado.
+* **Objetivo del Gato:** Anticipar los movimientos del jugador y capturarlo.
 
-Lenguaje: Python 3
-Librerías: os (para manipulación de la terminal/consola).
-Conceptos clave: Matrices, Tuplas, Diccionarios y Algoritmos de IA.
+El gato no solo te sigue; utiliza algoritmos de búsqueda para "pensar" cuál es su mejor jugada según el estado del tablero.
 
-🧠 Lógica y Algoritmos (Paso a Paso)
+---
 
-Este proyecto destaca por el uso de dos estrategias para el enemigo (el gato):
-Estrategia Greedy (Codiciosa): El gato calcula la distancia Manhattan hacia el ratón y elige el movimiento que más reduce esa distancia en el siguiente turno.
+## 🛠️ Tecnologías Utilizadas
 
-Algoritmo Minimax: 
+* **Lenguaje:** Python 3.x
+* **Librerías:** `os` (para la manipulación y limpieza de la terminal).
+* **Conceptos Clave:** * Estructuras de datos (Matrices, Tuplas, Diccionarios).
+    * Recursividad para algoritmos de IA.
+    * Copia profunda de estados de juego para simulación.
 
-Es el corazón del proyecto. El gato "imagina" el futuro hasta 4 turnos adelante.
+---
 
-Simula tanto sus mejores movimientos como los posibles movimientos de escape del jugador.
-Evaluación: Asigna puntajes (100 si atrapa al ratón, -100 si el ratón escapa) para decidir la ruta óptima.
+## 🧠 Lógica y Algoritmos (IA)
 
-Sistema de Renderizado: El tablero se limpia y se redibuja en cada turno para crear una sensación de animación en la consola, utilizando una lógica de "copia y reemplazo" para no dañar el mapa original.
+Este proyecto destaca por implementar dos niveles de dificultad o estrategias para el enemigo:
 
-🚀 Cómo Ejecutarlo
+### 1. Estrategia Greedy (Codiciosa)
+El gato calcula la **distancia Manhattan** hacia el ratón en cada paso y elige el movimiento inmediato que más reduce esa distancia. Es eficiente pero "miope", ya que no prevé obstáculos a largo plazo.
 
-Asegúrate de tener Python instalado.
+### 2. Algoritmo Minimax (Inteligencia Real)
+Es el componente más avanzado del proyecto. El gato "imagina" el futuro mediante un árbol de decisión:
 
-Guarda el código en un archivo llamado gato_raton.py.
 
-Ejecuta en tu terminal:
 
-Bash
+* **Profundidad:** Analiza hasta **4 turnos adelante**.
+* **Simulación:** Evalúa tanto sus mejores movimientos como los posibles movimientos de escape del jugador.
+* **Evaluación:** Asigna valores críticos (ej: `+100` si atrapa al ratón, `-100` si el ratón escapa) para decidir la ruta óptima.
 
-python gato_raton.py
+### 🖥️ Sistema de Renderizado
+El tablero utiliza una lógica de **limpieza y redibujo** (`os.system('cls'/'clear')`) en cada turno. Esto crea una experiencia fluida de "animación" en la consola, utilizando una técnica de copia del mapa base para no degradar el escenario original con los movimientos.
 
-Usa las teclas W, A, S, D para mover al ratón.
+---
+
+## 🚀 Cómo Ejecutarlo
+
+1.  **Requisito:** Tener Python 3 instalado.
+2.  **Preparación:** Guarda el código en un archivo llamado `gato_raton.py`.
+3.  **Lanzamiento:** Ejecuta el siguiente comando en tu terminal:
+    ```bash
+    python gato_raton.py
+    ```
+
+### 🎮 Controles
+Mueve al ratón usando las teclas de dirección clásicas:
+* **W**: Arriba
+* **A**: Izquierda
+* **S**: Abajo
+* **D**: Derecha
